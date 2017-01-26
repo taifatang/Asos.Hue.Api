@@ -62,6 +62,12 @@
   <ItemGroup>
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Asos.Hue.Api\Asos.Hue.Api.csproj">
+      <Project>{1501EEB1-D75A-481C-BBF8-BE0AAFEA9224}</Project>
+      <Name>Asos.Hue.Api</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

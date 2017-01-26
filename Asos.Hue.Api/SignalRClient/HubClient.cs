@@ -22,22 +22,23 @@ namespace SignalRClient
             return _hub.CreateHubProxy(name);
         }
 
-        public async Task Start()
+        public async Task Start(string name)
         {
             await _hub.Start();
+            await InvokeMethodOnServer(name);
         }
         public void Stop()
         {
             _hub.Stop();
         }
-        public async Task Register(string name)
+        public async Task InvokeMethodOnServer(string name)
         {
             await _proxy.Invoke(name);
         }
         
         public async Task RegisterHandler<T1,T2>(string eventName, Action<T1, T2> handler)
         {
-            _proxy.On<T1, T2>(eventName, handler);
+             _proxy.On<T1, T2>(eventName,  handler);
         }
     }
 }

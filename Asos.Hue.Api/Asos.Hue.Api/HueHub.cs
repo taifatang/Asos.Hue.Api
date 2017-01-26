@@ -41,10 +41,10 @@ namespace Asos.Hue.Api
 
         public async Task TurnOn(Bulb bulb)
         {
-            HttpResponseMessage response = await _httpClient.PutAsync(bulb.OnOffEndpoint(_options.UserKey), new { on = true }, new JsonMediaTypeFormatter());
+            var uri = bulb.OnOffEndpoint(_options.UserKey);
+            HttpResponseMessage response = await _httpClient.PutAsync(uri, new { on = true }, new JsonMediaTypeFormatter());
             response.EnsureSuccessStatusCode();
         }
-
         public async Task TurnOff(Bulb bulb)
         {
             HttpResponseMessage response = await _httpClient.PutAsync(bulb.OnOffEndpoint(_options.UserKey), new { on = false }, new JsonMediaTypeFormatter());
@@ -52,7 +52,7 @@ namespace Asos.Hue.Api
         }
         public async Task Toggle(Bulb bulb)
         {
-            HttpResponseMessage response = await _httpClient.PutAsync(bulb.OnOffEndpoint(_options.UserKey), new { on = !bulb.isOn }, new JsonMediaTypeFormatter());
+            HttpResponseMessage response = await _httpClient.PutAsync(bulb.OnOffEndpoint(_options.UserKey), new { on = !bulb.IsOn }, new JsonMediaTypeFormatter());
             response.EnsureSuccessStatusCode();
         }
         public async Task Flash(Bulb bulb, int durationInSeconds = 10)
@@ -78,7 +78,7 @@ namespace Asos.Hue.Api
             };
             httpClient.DefaultRequestHeaders.Accept.Clear();
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/JSON"));
-            return _httpClient;
+            return httpClient;
         }
 
     }

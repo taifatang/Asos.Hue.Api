@@ -9,18 +9,17 @@ namespace Asos.Hue.Api
 {
     public class Bulb
     {
-        public bool isOn { get; set; }
+        public bool IsOn { get; set; }
         public int Id { get; set; }
 
-        public static List<Bulb> ParseFromJson()
-        {
-
-            return null;
-        }
+        //public static List<Bulb> ParseFromJson()
+        //{
+        //    return null;
+        //}
 
         public string OnOffEndpoint(string userKey)
         {
-            return $"api/{ userKey }/lights/{ Id }/state";
+            return $"/api/{ userKey }/lights/{ Id }/state";
         }
     }
 }
