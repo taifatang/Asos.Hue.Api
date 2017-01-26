@@ -80,6 +80,5 @@ namespace Asos.Hue.Api
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/JSON"));
             return httpClient;
         }
-
     }
 }

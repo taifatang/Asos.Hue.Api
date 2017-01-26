@@ -11,6 +11,6 @@ namespace Asos.Hue.Api.Interfaces
         //Task<List<Bulb>>  GetAllBulbs();
         Task TurnOn(Bulb lightNumber);
         Task TurnOff(Bulb lightNumber);
-        Task Flash(Bulb lightNumber, int duration);
+        Task Flash(Bulb lightNumber, int duration = 10);
     }
 }

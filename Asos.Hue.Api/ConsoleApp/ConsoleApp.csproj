@@ -54,6 +54,10 @@
       <Project>{1501EEB1-D75A-481C-BBF8-BE0AAFEA9224}</Project>
       <Name>Asos.Hue.Api</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SignalRClient\SignalRClient.csproj">
+      <Project>{2A8F72C1-9A0F-42E2-949C-9DDAC86B2A1A}</Project>
+      <Name>SignalRClient</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

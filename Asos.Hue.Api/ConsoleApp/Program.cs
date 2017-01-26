@@ -8,6 +8,7 @@ using Asos.Hue.Api;
 using Asos.Hue.Api.Interfaces;
 using Asos.Hue.Api.Options;
 using SignalRClient;
+using SignalRClient.Config;
 
 namespace ConsoleApp
 {
@@ -26,11 +27,11 @@ namespace ConsoleApp
 
         private static async Task RunAsync()
         {
-            IHue hue = new HueHub(new HueHubOptions() { Uri = Config.HueApiUrl, UserKey = Config.HueUserKey });
+            IHue hue = new HueHub(new HueHubOptions() { Uri = GlobalConfig.HueApiUrl, UserKey = GlobalConfig.HueUserKey });
 
             var bulb = new Bulb {  Id = 2 };
 
-            await hue.Flash(bulb, 10);
+            await hue.Flash(bulb);
         }
     }
 }

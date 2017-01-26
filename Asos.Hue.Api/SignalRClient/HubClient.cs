@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNet.SignalR.Client;
+using SignalRClient.Enum;
 
 namespace SignalRClient
 {
@@ -22,23 +23,24 @@ namespace SignalRClient
             return _hub.CreateHubProxy(name);
         }
 
-        public async Task Start(string name)
+        public async Task Start() 
         {
             await _hub.Start();
-            await InvokeMethodOnServer(name);
         }
         public void Stop()
         {
             _hub.Stop();
         }
-        public async Task InvokeMethodOnServer(string name)
+        public async Task RegisterClient(string name)
         {
-            await _proxy.Invoke(name);
+            //var operation = $"Register{name}";
+            //TODO: "fix"
+            await _proxy.Invoke("RegisterHome");
         }
         
-        public async Task RegisterHandler<T1,T2>(string eventName, Action<T1, T2> handler)
+        public void RegisterHandler<T1,T2>(SignalREvent eventName, Action<T1, T2> handler)
         {
-             _proxy.On<T1, T2>(eventName,  handler);
+             _proxy.On<T1, T2>(eventName.ToString(),  handler);
         }
     }
 }
