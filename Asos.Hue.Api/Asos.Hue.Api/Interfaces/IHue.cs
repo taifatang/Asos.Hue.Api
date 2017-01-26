@@ -8,9 +8,9 @@ namespace Asos.Hue.Api.Interfaces
 {
     public interface IHue
     {
-        Task<List<Bulb>>  GetAllBulbs();
+        //Task<List<Bulb>>  GetAllBulbs();
         Task TurnOn(Bulb lightNumber);
         Task TurnOff(Bulb lightNumber);
-        Task Flash(Bulb lightNumber);
+        Task Flash(Bulb lightNumber, int duration);
     }
 }

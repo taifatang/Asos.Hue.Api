@@ -20,17 +20,11 @@ namespace ConsoleApp
 
         private static async Task RunAsync()
         {
-            var options = new HueHubOptions()
-            {
-                Uri = "http://172.16.9.39/",
-                UserKey = "wQts2P-p7Lbf416lmTEJSQZjNMT9TwNOzvHpQeMY"
-            };
-            IHue hue = new HueHub(options);
+            IHue hue = new HueHub(new HueHubOptions() { Uri = "http://172.16.9.39/", UserKey = "wQts2P-p7Lbf416lmTEJSQZjNMT9TwNOzvHpQeMY" });
 
-            //hue.Flash(2);
+            var bulb = new Bulb {  Id = 2 };
 
-            var bulbs = await hue.GetAllBulbs();
-            Console.WriteLine(bulbs.ToString());
+            await hue.Flash(bulb, 10);
         }
     }
 }

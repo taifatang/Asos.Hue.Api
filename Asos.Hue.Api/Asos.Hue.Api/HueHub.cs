@@ -26,22 +26,18 @@ namespace Asos.Hue.Api
             _httpClient = ConfigureHttpClient(options);
         }
 
-        public async Task<List<Bulb>> GetAllBulbs()
-        {
-            List<Bulb> bulbs = new List<Bulb>();
-            var uri = $"api/{_options.UserKey}/lights";
-            HttpResponseMessage response = await _httpClient.GetAsync(uri);
-            if (response.IsSuccessStatusCode)
-            {
-                var b = await response.Content.ReadAsStringAsync();
-                var x = JToken.Parse(b);
-                foreach ()
-                {
-
-                }
-            }
-            return bulbs;
-        }
+        //public async Task<List<Bulb>> GetAllBulbs()
+        //{
+        //    List<Bulb> bulbs = new List<Bulb>();
+        //    var uri = $"api/{_options.UserKey}/lights";
+        //    HttpResponseMessage response = await _httpClient.GetAsync(uri);
+        //    if (response.IsSuccessStatusCode)
+        //    {
+        //        var response = await response.Content.ReadAsStringAsync();
+        //        return 
+        //    }
+        //    return bulbs;
+        //}
 
         public async Task TurnOn(Bulb bulb)
         {
