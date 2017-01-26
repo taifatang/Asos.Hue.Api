@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asos.Hue.Api", "Asos.Hue.Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asos.Hue.Api.UnitTests", "Asos.Hue.Api.UnitTests\Asos.Hue.Api.UnitTests.csproj", "{9449E670-D916-449D-A4EC-3ABB85B21F87}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{936FE25F-7387-42E7-A67A-77720219257A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9449E670-D916-449D-A4EC-3ABB85B21F87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9449E670-D916-449D-A4EC-3ABB85B21F87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9449E670-D916-449D-A4EC-3ABB85B21F87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{936FE25F-7387-42E7-A67A-77720219257A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{936FE25F-7387-42E7-A67A-77720219257A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{936FE25F-7387-42E7-A67A-77720219257A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{936FE25F-7387-42E7-A67A-77720219257A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
