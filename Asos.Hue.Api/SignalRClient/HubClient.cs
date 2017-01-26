@@ -33,9 +33,8 @@ namespace SignalRClient
         }
         public async Task RegisterClient(string name)
         {
-            //var operation = $"Register{name}";
-            //TODO: "fix"
-            await _proxy.Invoke("RegisterHome");
+            var operation = $"Register{name}";
+             await _proxy.Invoke(operation);
         }
         
         public void RegisterHandler<T1,T2>(SignalREvent eventName, Action<T1, T2> handler)

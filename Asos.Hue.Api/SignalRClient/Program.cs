@@ -17,6 +17,7 @@ namespace SignalRClient
         static void Main(string[] args)
         {
             Console.WriteLine("*** Hue Api Client started ***");
+            Console.WriteLine($"*** Listening to {GlobalConfig.SignalRHost}, Client name: {GlobalConfig.SignalRClientName}, Hub: {GlobalConfig.SignalRHub} ***");
 
             StartAsync().Wait();
 
@@ -32,7 +33,7 @@ namespace SignalRClient
             await client.Start();
 
             client.RegisterHandler<string, string>(SignalREvent.BellPressed, BellPressedHandler);
-                    
+
             await client.RegisterClient(GlobalConfig.SignalRClientName);
         }
 
