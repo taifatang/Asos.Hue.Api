@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SignalRClient.Enum
+namespace Asos.Hue.Api.Enums
 {
-    public enum SignalREvent
+    public enum HueColor
     {
-        BellPressed,
-        FacesUnknown, 
-        FacesIdentified
+        Green,
+        White,
+        Default,
+        Orange
     }
 }
